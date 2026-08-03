@@ -1,8 +1,10 @@
 import streamlit as st
 
 from storage import get_storage
+from auth import require_password
 
 st.set_page_config(page_title="Sistema_CV", page_icon="📄", layout="wide")
+require_password()
 
 
 @st.cache_resource

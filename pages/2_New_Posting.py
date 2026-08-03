@@ -4,11 +4,13 @@ import datetime
 import streamlit as st
 
 from storage import get_storage
+from auth import require_password
 from matcher import score_posting
 from generator import detect_language
 from models import Application
 
 st.set_page_config(page_title="New Posting — Sistema_CV", page_icon="📥", layout="wide")
+require_password()
 
 
 @st.cache_resource

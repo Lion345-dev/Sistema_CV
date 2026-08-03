@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 
 from storage import get_storage
+from auth import require_password
 from models import (
     MasterCV, Contact, SummaryVariant, ExperienceEntry, Bullet,
     EducationEntry, Certification, Project, ProjectBullet, SkillGroup,
@@ -9,6 +10,7 @@ from models import (
 )
 
 st.set_page_config(page_title="Master CV — Sistema_CV", page_icon="📄", layout="wide")
+require_password()
 
 
 @st.cache_resource

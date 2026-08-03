@@ -4,11 +4,13 @@ import uuid
 import streamlit as st
 
 from storage import get_storage
+from auth import require_password
 from variation import build_varied_cv_content, build_varied_cover_letter_content
 from docx_export import cv_to_bytes, cover_letter_to_bytes
 from models import GeneratedVersion
 
 st.set_page_config(page_title="Generate Documents — Sistema_CV", page_icon="🛠️", layout="wide")
+require_password()
 
 MONTHS_ES = {
     1: "enero", 2: "febrero", 3: "marzo", 4: "abril", 5: "mayo", 6: "junio",

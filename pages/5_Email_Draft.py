@@ -1,9 +1,11 @@
 import streamlit as st
 
 from storage import get_storage
+from auth import require_password
 from email_draft import build_email_draft
 
 st.set_page_config(page_title="Email Draft — Sistema_CV", page_icon="✉️", layout="wide")
+require_password()
 
 
 @st.cache_resource
