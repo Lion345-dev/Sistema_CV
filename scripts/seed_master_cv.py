@@ -1,0 +1,433 @@
+"""One-off seed script: populates data/master_cv.yaml from Luis's real reference
+documents (the IPAB and Investments/Capital Markets CVs, the IPAB cover letter,
+and the older CV-main portfolio markdown). Re-run only if you want to reset the
+master CV back to this known-good baseline — day-to-day edits should go through
+the Master CV page in the app instead, since re-running this overwrites them.
+"""
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).parent.parent))
+
+from models import (
+    MasterCV, Contact, SummaryVariant, ExperienceEntry, Bullet,
+    EducationEntry, Certification, Project, ProjectBullet, SkillGroup, LanguageSkill, Anecdote,
+)
+from storage import LocalYAMLStorage
+
+contact = Contact(
+    name="Luis Yael Carmona Gutiérrez",
+    location="Guadalajara, Jalisco, México",
+    email="luisya4505@gmail.com",
+    phone="+52 (333) 129-5731",
+    linkedin_url="https://www.linkedin.com/in/luisyaelcarmona/",
+)
+
+summary_bank = [
+    SummaryVariant(
+        id="summary_markets_es",
+        language="es",
+        focus_tags=["markets", "investment", "quant"],
+        text=(
+            "Recién egresado de Finanzas con experiencia práctica en análisis y reportes financieros, "
+            "actualmente en preparación para la certificación Figura 3 (Bursatrón) de la AMIB. Interés "
+            "genuino y activo en mercados bursátiles: desarrollo por cuenta propia una plataforma de "
+            "automatización de inversiones en Python (AutoInvest Pro), con 12 módulos completados. "
+            "Combino formación financiera formal, criterio analítico y afinidad natural por el "
+            "seguimiento de mercados, commodities e instrumentos de renta variable."
+        ),
+    ),
+    SummaryVariant(
+        id="summary_regulatory_en",
+        language="en",
+        focus_tags=["regulatory", "writing", "policy"],
+        text=(
+            "Finance graduate with hands-on experience in financial reporting, document management, "
+            "and process improvement, currently completing a professional certification in the Mexican "
+            "securities market (Figura 3, Bursatrón). Advanced English proficiency with proven ability "
+            "to prepare technical materials and communicate clearly with non-native speakers. Strong "
+            "analytical skills, structured writing, and a keen interest in banking regulation and "
+            "deposit insurance frameworks."
+        ),
+    ),
+    SummaryVariant(
+        id="summary_markets_en",
+        language="en",
+        focus_tags=["markets", "investment", "quant"],
+        text=(
+            "Recent Finance graduate with hands-on experience in financial analysis and reporting, "
+            "currently preparing for the AMIB Figura 3 (Bursatrón) securities-market certification. "
+            "Genuine, active interest in equity and commodity markets: independently building a Python "
+            "investment-automation platform (AutoInvest Pro), with 12 modules completed to date. "
+            "Combines formal finance training, analytical judgment, and a natural pull toward market "
+            "and instrument tracking."
+        ),
+    ),
+    SummaryVariant(
+        id="summary_regulatory_es",
+        language="es",
+        focus_tags=["regulatory", "writing", "policy"],
+        text=(
+            "Egresado de Finanzas con experiencia práctica en reportes financieros, gestión documental "
+            "y mejora de procesos, actualmente cursando la certificación Figura 3 (Bursatrón) para el "
+            "mercado de valores mexicano. Inglés avanzado con capacidad comprobada para preparar "
+            "materiales técnicos y comunicarme con claridad frente a hablantes no nativos. Habilidades "
+            "analíticas sólidas, redacción estructurada, e interés genuino en regulación bancaria y "
+            "esquemas de protección al ahorro."
+        ),
+    ),
+    # --- second phrasing variant per (language, focus): same facts, different sentence
+    # structure/rhythm, so variation.py has genuine choices instead of picking the only option.
+    SummaryVariant(
+        id="summary_markets_es_v2",
+        language="es",
+        focus_tags=["markets", "investment", "quant"],
+        text=(
+            "Formación en Finanzas combinada con experiencia práctica en reportes y análisis "
+            "financiero. Estoy en preparación para la certificación Figura 3 (Bursatrón) de la AMIB, "
+            "y desde hace tiempo desarrollo AutoInvest Pro, una plataforma propia en Python para "
+            "automatizar decisiones de inversión, con 12 módulos ya construidos. Mi interés por los "
+            "mercados bursátiles, los commodities y la renta variable no es reciente: es la razón por "
+            "la que combino criterio analítico con programación."
+        ),
+    ),
+    SummaryVariant(
+        id="summary_regulatory_en_v2",
+        language="en",
+        focus_tags=["regulatory", "writing", "policy"],
+        text=(
+            "I graduated in Finance with practical experience in financial reporting, document "
+            "management, and process improvement, and I'm now completing the Figura 3 (Bursatrón) "
+            "certification for Mexico's securities market. My English is advanced enough to prepare "
+            "technical materials and hold real conversations with non-native speakers — not just pass "
+            "a test. What draws me most is structured, careful writing, applied to banking regulation "
+            "and deposit insurance frameworks."
+        ),
+    ),
+    SummaryVariant(
+        id="summary_markets_en_v2",
+        language="en",
+        focus_tags=["markets", "investment", "quant"],
+        text=(
+            "I'm a recent Finance graduate who has spent the last few years turning financial "
+            "analysis into a habit, not just a class requirement. I'm currently preparing for the "
+            "AMIB Figura 3 (Bursatrón) certification, and on my own time I've been building "
+            "AutoInvest Pro, a Python-based investment automation platform now twelve modules deep. "
+            "Markets, commodities, and equity instruments are where my attention naturally goes."
+        ),
+    ),
+    SummaryVariant(
+        id="summary_regulatory_es_v2",
+        language="es",
+        focus_tags=["regulatory", "writing", "policy"],
+        text=(
+            "Egresado de Finanzas con paso por reportes financieros, gestión documental y mejora de "
+            "procesos, y actualmente en preparación para Figura 3 (Bursatrón), certificación para el "
+            "mercado de valores mexicano. Mi inglés avanzado me permite preparar materiales técnicos y "
+            "sostener conversaciones reales con hablantes no nativos, no solo aprobar un examen. La "
+            "regulación bancaria y los esquemas de protección al ahorro son el tipo de tema en el que "
+            "de verdad quiero invertir tiempo."
+        ),
+    ),
+]
+
+experience = [
+    ExperienceEntry(
+        id="exp_cavii",
+        company="CAVII",
+        role_es="Asistente Administrativo",
+        role_en="Administrative Assistant",
+        location="Jalisco, México",
+        start="2023",
+        end="Presente",
+        tags=["financial-reporting", "reconciliation", "process-improvement", "regulatory", "markets"],
+        bullets=[
+            Bullet(
+                text_es="Colaboro en la preparación de reportes financieros, mejorando la claridad para la toma de decisiones.",
+                text_en="Contributed to the preparation of financial reports, improving clarity in decision-making.",
+                tags=["financial-reporting"],
+                metric="reporting clarity",
+            ),
+            Bullet(
+                text_es="Mejoré la precisión financiera en 99.5%, manteniendo registros actualizados y conciliaciones bancarias mensuales.",
+                text_en="Improved financial accuracy by 99.5%, maintaining up-to-date records and monthly bank reconciliations.",
+                tags=["reconciliation", "accuracy"],
+                metric="99.5% accuracy",
+            ),
+            Bullet(
+                text_es="Optimicé la gestión documental (500 documentos al mes) y la correspondencia (300 comunicaciones al mes).",
+                text_en="Optimized document management (500 documents per month) and correspondence (300 communications per month).",
+                tags=["document-management"],
+                metric="500 docs/month",
+            ),
+            Bullet(
+                text_es="Contribuí a un incremento del 15% en la eficiencia operativa anual mediante mejora continua.",
+                text_en="Fostered continuous improvement, achieving a 15% increase in annual operational efficiency.",
+                tags=["process-improvement"],
+                metric="15% efficiency gain",
+            ),
+        ],
+    ),
+    ExperienceEntry(
+        id="exp_coparmex",
+        company="COPARMEX",
+        role_es="Coordinador de Eventos",
+        role_en="Event Coordinator",
+        location="Jalisco, México",
+        start="2022",
+        end="2023",
+        tags=["coordination", "leadership", "logistics"],
+        bullets=[
+            Bullet(
+                text_es="Planeé y ejecuté eventos con 95% de eficiencia, asegurando una logística impecable.",
+                text_en="Planned and executed events with 95% efficiency, ensuring impeccable logistics.",
+                tags=["logistics"],
+                metric="95% efficiency",
+            ),
+            Bullet(
+                text_es="Coordiné un equipo de cinco personas, cumpliendo el 100% de los plazos establecidos.",
+                text_en="Coordinated a team of five employees, meeting 100% of established deadlines.",
+                tags=["leadership", "coordination"],
+                metric="team of five",
+            ),
+            Bullet(
+                text_es="Resolví imprevistos en menos de 15 minutos, garantizando la continuidad de los eventos.",
+                text_en="Resolved unforeseen incidents in under 15 minutes, ensuring continuity of events.",
+                tags=["problem-solving"],
+                metric="<15 min response",
+            ),
+        ],
+    ),
+    ExperienceEntry(
+        id="exp_royal_prestige",
+        company="Royal Prestige",
+        role_es="Vendedor",
+        role_en="Sales Representative",
+        location="Jalisco, México",
+        start="2013",
+        end="2015",
+        tags=["sales", "client-relations"],
+        bullets=[
+            Bullet(
+                text_es="Realicé demostraciones de producto con una tasa de conversión del 30%.",
+                text_en="Conducted product demonstrations with a 30% conversion rate, driving sales.",
+                tags=["sales"],
+                metric="30% conversion",
+            ),
+            Bullet(
+                text_es="Construí relaciones sólidas con clientes, logrando una tasa de satisfacción del 75.3%.",
+                text_en="Built strong customer relationships, achieving a 75.3% satisfaction rate.",
+                tags=["client-relations"],
+                metric="75.3% satisfaction",
+            ),
+            Bullet(
+                text_es="Expandí la cartera de clientes en 20% anual mediante estrategias de prospección.",
+                text_en="Expanded the customer base by 20% annually through prospecting strategies.",
+                tags=["sales", "prospecting"],
+                metric="20% annual growth",
+            ),
+            Bullet(
+                text_es="Mantuve altos estándares de cierre de ventas y seguimiento, con 85% de retención de clientes.",
+                text_en="Maintained high standards for closing sales and follow-up, with an 85% customer retention rate.",
+                tags=["sales", "retention"],
+                metric="85% retention",
+            ),
+        ],
+    ),
+]
+
+education = [
+    EducationEntry(
+        institution="Universidad Panamericana",
+        degree_es="Licenciatura en Administración y Dirección de Empresas Familiares",
+        degree_en="Bachelor's Degree in Family Business Administration and Management",
+        location="Jalisco, México",
+        start="2022",
+        end="2026",
+        notes_es="Programa doble; promedio general 9.1; miembro activo de UP Trading Lab.",
+        notes_en="Dual-degree program; overall GPA 9.1; active member of UP Trading Lab.",
+    ),
+    EducationEntry(
+        institution="Universidad Panamericana",
+        degree_es="Licenciatura en Administración y Finanzas",
+        degree_en="Bachelor's Degree in Business Administration and Finance",
+        location="Jalisco, México",
+        start="2025",
+        end="2026",
+        notes_es="Ambas licenciaturas concluidas (programa doble). Especialización en mercados financieros.",
+        notes_en="Both degrees completed (dual-degree program). Specialization in financial markets.",
+    ),
+]
+
+certifications = [
+    Certification(
+        id="cert_figura3",
+        name="Figura 3 (Bursatrón)",
+        issuer="AMIB",
+        status="in_progress",
+        date="2026",
+        tags=["markets", "investment", "regulatory", "quant"],
+    ),
+    Certification(
+        id="cert_fintech_ieb",
+        name="Fintech y Data Science",
+        issuer="Instituto de Estudios Bursátiles (IEB), Madrid, España",
+        status="completed",
+        date="2025",
+        tags=["markets", "quant", "data-science"],
+    ),
+    Certification(
+        id="cert_english_workshop",
+        name="English Testing and Assessment Workshop (35 hrs)",
+        issuer="Quick Learning, Guadalajara",
+        status="completed",
+        date="2026",
+        tags=["writing", "regulatory", "policy", "english"],
+    ),
+    Certification(
+        id="cert_citizen_data_scientist",
+        name="Ing. Citizen Data Scientist",
+        issuer="Tecnológico de Monterrey",
+        status="completed",
+        date="2023",
+        tags=["quant", "data-science", "markets"],
+    ),
+]
+
+projects = [
+    Project(
+        id="proj_autoinvest_pro",
+        name="AutoInvest Pro",
+        tags=["markets", "investment", "quant", "python"],
+        bullets=[
+            ProjectBullet(
+                text_es="Plataforma propia de automatización de inversiones desarrollada en Python, con 12 módulos completados hasta la fecha.",
+                text_en="Independently built Python investment-automation platform, with 12 modules completed to date.",
+                length="short",
+            ),
+            ProjectBullet(
+                text_es="Aplico conceptos de análisis de datos y programación directamente a la evaluación de instrumentos financieros y estrategias de inversión.",
+                text_en="Apply data analysis and programming concepts directly to evaluating financial instruments and investment strategies.",
+                length="medium",
+            ),
+        ],
+    ),
+]
+
+skills = [
+    SkillGroup(
+        category="financial",
+        items_es=["Análisis financiero", "seguimiento de mercados bursátiles y commodities", "conciliaciones bancarias"],
+        items_en=["Financial analysis", "equity and commodity market tracking", "bank reconciliation"],
+        tags=["markets", "regulatory"],
+    ),
+    SkillGroup(
+        category="technical",
+        items_es=["Programación en Python", "Power BI", "Excel avanzado para finanzas"],
+        items_en=["Python programming", "Power BI", "Advanced Excel for finance"],
+        tags=["quant", "data-science"],
+    ),
+    SkillGroup(
+        category="communication",
+        items_es=["Redacción técnica estructurada", "coordinación multidisciplinaria"],
+        items_en=["Structured technical writing", "cross-team coordination"],
+        tags=["writing", "regulatory", "policy"],
+    ),
+]
+
+anecdotes = [
+    Anecdote(
+        id="anecdote_dual_degree_balance",
+        text_es=(
+            "He pasado los últimos años equilibrando un programa de doble titulación exigente con "
+            "un trabajo de tiempo completo."
+        ),
+        text_en=(
+            "I've spent the last few years balancing a demanding dual-degree program with full-time work."
+        ),
+        tags=[],  # generic — usable as opening context regardless of posting focus
+    ),
+    Anecdote(
+        id="anecdote_reconciliation_enjoyment",
+        text_es=(
+            "En CAVII llevo las conciliaciones bancarias mensuales y ayudo a preparar reportes "
+            "financieros, y la parte que más disfruto es justamente la conciliación en sí — detectar "
+            "la pequeña discrepancia antes de que se convierta en un problema real."
+        ),
+        text_en=(
+            "At CAVII I handle monthly bank reconciliations and help prepare financial reports, and "
+            "honestly, the part of that job I've come to enjoy most is the reconciliation work itself "
+            "— catching the small discrepancy before it becomes a real problem."
+        ),
+        tags=["reconciliation", "financial-reporting", "regulatory"],
+    ),
+    Anecdote(
+        id="anecdote_coparmex_crisis_management",
+        text_es=(
+            "Antes coordiné eventos para COPARMEX, lo cual significaba gestionar a cinco personas y "
+            "resolver lo que fuera saliendo mal en tiempo real, casi siempre con no más de quince "
+            "minutos para resolverlo."
+        ),
+        text_en=(
+            "Before that, I coordinated events for COPARMEX, which meant managing five people and "
+            "fixing whatever went wrong in real time, usually with no more than fifteen minutes to "
+            "figure it out."
+        ),
+        tags=["leadership", "coordination", "problem-solving"],
+    ),
+    Anecdote(
+        id="anecdote_international_regulatory_interest",
+        text_es=(
+            "Lo que me atrae de este tipo de puesto es el lado internacional — comparar cómo otros "
+            "países estructuran sus esquemas de seguro de depósitos y resolución bancaria, y evaluar "
+            "qué vale la pena adaptar aquí."
+        ),
+        text_en=(
+            "What draws me to this kind of role is the international side of it — comparing how "
+            "other countries structure deposit insurance and bank resolution, and figuring out what's "
+            "worth adapting here."
+        ),
+        tags=["policy", "regulatory"],
+    ),
+    Anecdote(
+        id="anecdote_autoinvest_pro_motivation",
+        text_es=(
+            "Fuera del horario de oficina he construido AutoInvest Pro, una plataforma propia en "
+            "Python para automatizar decisiones de inversión, ya con doce módulos completados — no "
+            "por un curso, sino porque los mercados son el tema al que naturalmente regreso."
+        ),
+        text_en=(
+            "On my own time I've been building AutoInvest Pro, a Python-based investment automation "
+            "platform, twelve modules in — not for a class, but because markets are the subject I "
+            "naturally keep coming back to."
+        ),
+        tags=["markets", "investment", "quant"],
+    ),
+]
+
+languages = [
+    LanguageSkill(name_es="Español", name_en="Spanish", level_es="Nativo", level_en="Native"),
+    LanguageSkill(
+        name_es="Inglés", name_en="English", level_es="Avanzado", level_en="Advanced",
+        detail="TOEFL ITP: 550 puntos / TOEFL ITP: 550 points",
+    ),
+]
+
+master_cv = MasterCV(
+    contact=contact,
+    summary_bank=summary_bank,
+    experience=experience,
+    education=education,
+    certifications=certifications,
+    projects=projects,
+    skills=skills,
+    languages=languages,
+    anecdotes=anecdotes,
+    interests_es=["inversión en bolsa", "programación", "canto", "box", "gimnasio"],
+    interests_en=["stock investing", "programming", "singing", "boxing", "gym training"],
+)
+
+if __name__ == "__main__":
+    storage = LocalYAMLStorage()
+    storage.save_master_cv(master_cv, commit_message="Seed master CV from reference documents")
+    print("Wrote data/master_cv.yaml")
