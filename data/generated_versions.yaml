@@ -1,1 +1,9 @@
-[]
+- id: 97e3c166_cv_2c218b
+  posting_id: 97e3c166
+  doc_type: cv
+  language: en
+  template_choices:
+    summary_variant_id: summary_markets_en
+    section_order_index: 2
+    interests_label_index: 1
+  timestamp: '2026-08-03T13:50:33.187185'
