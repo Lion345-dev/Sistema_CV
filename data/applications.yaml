@@ -33,7 +33,7 @@
     studies.'
   language: en
   date_created: '2026-08-03'
-  date_applied: null
+  date_applied: '2026-08-03'
   match_score: 100
   match_rationale:
   - '✓ investment: AutoInvest Pro, Figura 3 (Bursatrón)'
@@ -46,6 +46,7 @@
   - '✓ writing: English Testing and Assessment Workshop (35 hrs), communication'
   cv_version_id: 97e3c166_cv_2c218b
   cover_letter_version_id: null
-  status: draft
+  status: applied
   notes: ''
   email_draft_id: null
+  interview_prep_path: interview_prep/IGNIA_Partners_Investment_Intern_97e3c166/prep.md

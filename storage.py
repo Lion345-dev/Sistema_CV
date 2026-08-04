@@ -71,12 +71,18 @@ class LocalYAMLStorage:
     def save_generated_versions(self, versions: list[GeneratedVersion], commit_message: str = "Log generated version") -> None:
         self._write(GENERATED_VERSIONS_FILE, [v.to_dict() for v in versions], commit_message)
 
-    # --- generated document files (CV/cover letter .docx per application) ---
+    # --- generated document files (CV/cover letter .docx, interview prep .md, etc.) ---
     def save_generated_document(self, relative_path: str, content: bytes, commit_message: str = "") -> None:
         path = self.project_root / relative_path
         path.parent.mkdir(parents=True, exist_ok=True)
         with open(path, "wb") as f:
             f.write(content)
+
+    def load_generated_document(self, relative_path: str) -> Optional[bytes]:
+        path = self.project_root / relative_path
+        if not path.exists():
+            return None
+        return path.read_bytes()
 
 
 class GitHubYAMLStorage:
@@ -136,13 +142,20 @@ class GitHubYAMLStorage:
     def save_generated_versions(self, versions: list[GeneratedVersion], commit_message: str = "Log generated version") -> None:
         self._write(GENERATED_VERSIONS_FILE, [v.to_dict() for v in versions], commit_message)
 
-    # --- generated document files (CV/cover letter .docx per application) ---
+    # --- generated document files (CV/cover letter .docx, interview prep .md, etc.) ---
     def save_generated_document(self, relative_path: str, content: bytes, commit_message: str = "") -> None:
         try:
             existing = self._repo.get_contents(relative_path, ref=self._branch)
             self._repo.update_file(relative_path, commit_message or f"Update {relative_path}", content, existing.sha, branch=self._branch)
         except Exception:
             self._repo.create_file(relative_path, commit_message or f"Add {relative_path}", content, branch=self._branch)
+
+    def load_generated_document(self, relative_path: str) -> Optional[bytes]:
+        try:
+            content_file = self._repo.get_contents(relative_path, ref=self._branch)
+        except Exception:
+            return None
+        return content_file.decoded_content
 
 
 def get_storage():

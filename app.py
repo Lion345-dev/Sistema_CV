@@ -43,8 +43,9 @@ st.markdown(
 1. **Master CV** — revisa o edita tus datos maestros (experiencia, certificaciones, proyectos).
 2. **New Posting** — pega el texto de una vacante y obtén un match score explicado.
 3. **Generate Documents** — genera un CV y carta de intención únicos para esa vacante.
-4. **Tracker** — lleva registro de a quién le mandaste qué versión y en qué status va.
+4. **Tracker** — lleva registro de a quién le mandaste qué versión y en qué status va. Al marcar una postulación como **applied**, se genera automáticamente su preparación de entrevista.
 5. **Email Draft** — arma el correo de postulación (nunca se envía automáticamente — lo revisas tú).
+6. **Interview Prep** — briefing de la empresa, preguntas probables, y cómo conectar tu experiencia — listo para cuando te hablen para una entrevista.
 
 Usa el menú de la izquierda para navegar entre páginas.
 """

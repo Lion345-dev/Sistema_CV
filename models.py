@@ -166,6 +166,7 @@ class Application:
     status: str = "draft"  # draft | applied | interview | rejected | offer
     notes: str = ""
     email_draft_id: Optional[str] = None
+    interview_prep_path: Optional[str] = None
 
     def to_dict(self) -> dict:
         return asdict(self)
