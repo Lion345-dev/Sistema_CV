@@ -15,7 +15,5 @@ env/
 .DS_Store
 Thumbs.db
 
-# Generated output (docx is regenerated on demand, not persisted)
+# Scratch/test output (generated_documents/ is intentionally tracked)
 output/
-*.docx
-*.pdf

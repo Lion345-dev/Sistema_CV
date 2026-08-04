@@ -78,6 +78,11 @@ if st.button("🎲 Generar CV y carta de intención", type="primary"):
     history.append(GeneratedVersion(id=cover_version_id, posting_id=app.id, doc_type="cover_letter", language=language, template_choices=cover_choices, timestamp=now))
     storage.save_generated_versions(history, commit_message=f"Log generated versions for {app.id}")
 
+    app_folder = f"generated_documents/{slugify(app.company)}_{slugify(app.role_title)}_{app.id}"
+    storage.save_generated_document(f"{app_folder}/CV.docx", cv_bytes, commit_message=f"Save generated CV for {app.id}")
+    storage.save_generated_document(f"{app_folder}/CoverLetter.docx", cover_bytes, commit_message=f"Save generated cover letter for {app.id}")
+    st.session_state[f"saved_path_{app.id}"] = app_folder
+
     apps = storage.load_applications()
     for a in apps:
         if a.id == app.id:
@@ -123,5 +128,8 @@ if f"cv_bytes_{app.id}" in st.session_state:
         for p in cover_preview.paragraphs:
             st.write(p)
         st.write(cover_preview.closing)
+
+    if f"saved_path_{app.id}" in st.session_state:
+        st.caption(f"📁 También guardado en `{st.session_state[f'saved_path_{app.id}']}/`")
 
     st.caption("Revisa siempre el .docx descargado antes de enviarlo — este es un primer borrador, no un documento final.")

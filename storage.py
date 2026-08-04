@@ -21,7 +21,9 @@ import yaml
 
 from models import MasterCV, Application, GeneratedVersion
 
-DATA_DIR = Path(__file__).parent / "data"
+PROJECT_ROOT = Path(__file__).parent
+DATA_DIR = PROJECT_ROOT / "data"
+GENERATED_DOCS_DIR = "generated_documents"
 MASTER_CV_FILE = "master_cv.yaml"
 APPLICATIONS_FILE = "applications.yaml"
 GENERATED_VERSIONS_FILE = "generated_versions.yaml"
@@ -31,6 +33,7 @@ class LocalYAMLStorage:
     def __init__(self, data_dir: Path = DATA_DIR):
         self.data_dir = data_dir
         self.data_dir.mkdir(parents=True, exist_ok=True)
+        self.project_root = data_dir.parent
 
     def _read(self, filename: str) -> dict | list | None:
         path = self.data_dir / filename
@@ -67,6 +70,13 @@ class LocalYAMLStorage:
 
     def save_generated_versions(self, versions: list[GeneratedVersion], commit_message: str = "Log generated version") -> None:
         self._write(GENERATED_VERSIONS_FILE, [v.to_dict() for v in versions], commit_message)
+
+    # --- generated document files (CV/cover letter .docx per application) ---
+    def save_generated_document(self, relative_path: str, content: bytes, commit_message: str = "") -> None:
+        path = self.project_root / relative_path
+        path.parent.mkdir(parents=True, exist_ok=True)
+        with open(path, "wb") as f:
+            f.write(content)
 
 
 class GitHubYAMLStorage:
@@ -125,6 +135,14 @@ class GitHubYAMLStorage:
 
     def save_generated_versions(self, versions: list[GeneratedVersion], commit_message: str = "Log generated version") -> None:
         self._write(GENERATED_VERSIONS_FILE, [v.to_dict() for v in versions], commit_message)
+
+    # --- generated document files (CV/cover letter .docx per application) ---
+    def save_generated_document(self, relative_path: str, content: bytes, commit_message: str = "") -> None:
+        try:
+            existing = self._repo.get_contents(relative_path, ref=self._branch)
+            self._repo.update_file(relative_path, commit_message or f"Update {relative_path}", content, existing.sha, branch=self._branch)
+        except Exception:
+            self._repo.create_file(relative_path, commit_message or f"Add {relative_path}", content, branch=self._branch)
 
 
 def get_storage():
