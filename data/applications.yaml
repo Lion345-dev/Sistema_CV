@@ -185,7 +185,7 @@
     and vendor data analytical platforms.'
   language: en
   date_created: '2026-08-17'
-  date_applied: null
+  date_applied: '2026-08-18'
   match_score: 100
   match_rationale:
   - '✓ investment: AutoInvest Pro, Figura 3 (Bursatrón)'
@@ -196,8 +196,9 @@
   - '✓ writing: English Testing and Assessment Workshop (35 hrs), communication'
   cv_version_id: 3bc92e09_cv_3edcc0
   cover_letter_version_id: 3bc92e09_cover_1f68b5
-  status: draft
-  notes: Job ID 330713. Sugerida por Diego Rueda como mejor fit tras la postulación a Senior Associate,
-    Index Management.
+  status: applied
+  notes: 'Job ID 330713. Sugerida por Diego Rueda como mejor fit tras la postulación a Senior Associate,
+    Index Management. Enviada por Luis vía el portal Workday de S&P Global (Associate Data Product Owner,
+    Job ID 330713). Estatus en el portal: In Review.'
   email_draft_id: null
   interview_prep_path: null
