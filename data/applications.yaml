@@ -50,3 +50,59 @@
   notes: ''
   email_draft_id: null
   interview_prep_path: interview_prep/IGNIA_Partners_Investment_Intern_97e3c166/prep.md
+- id: 869b53b0
+  company: S&P Global (S&P Dow Jones Indices)
+  role_title: Senior Associate, Index Management
+  posting_text: 'Senior Associate, Index Management - Security Research Group, Index Management & Production
+    Group (IMPG), S&P Dow Jones Indices.
+
+
+    The Team: The candidate will be part of the Security Research Group within the Index Management &
+    Production Group (IMPG) which is responsible for the maintenance and calculation of S&P Dow Jones
+    Indices which includes a wide range of high profile indices based in Latin America and globally.
+
+
+    The Impact: The Senior Associate, Index Management will research company information for all companies
+    in an assigned country (countries), including shares outstanding, free float information and corporate
+    actions with a certain degree of complexity (mergers, acquisitions, spinoffs, etc). This role requires
+    an excellent understanding of equity markets.
+
+
+    Responsibilities: Research and analysis on market driven events. Closely monitor and track corporate
+    actions (Mergers, Acquisitions, Spinoffs, etc). Monitor news sources for corporate action announcements.
+    Analyze impact on indices. Research, input, interpret and verify corporate actions. Consult with other
+    teams on index adjustments. Research, analyze and maintain shares outstanding and free float information.
+    Create and support automation tools and processes. Become subject matter expert on technology systems.
+    Programming skills preferably in Power Automation/Power BI, Python, SQL and VBA. Maintain customer
+    focus, communicate changes to impacted teams, respond to client inquiries.
+
+
+    Qualifications: Bachelor''s Degree in a finance-related subject. Fluency in English, written and spoken,
+    required. Excellent understanding of financial markets. Must work independently. Excellent analytical
+    and quantitative capabilities. Excellent computer skills in Microsoft Excel, Word. Excellent written
+    and verbal communication skills. Proficient in interpreting and analyzing corporate filings.
+
+
+    Preferred: CFA or advanced degree in business, math, economics, or finance. Direct experience at an
+    index provider and/or financial institution focused on index tracking/replication/portfolio management
+    or corporate actions. Understanding of how indices are used and impact of corporate events on indices
+    and portfolios. Programming skills in Power Automation/Power BI, Python, SQL, VBA. Exposure to AI
+    and related tools for data transformation/process automation/data analysis and smart QA.'
+  language: en
+  date_created: '2026-08-17'
+  date_applied: null
+  match_score: 93
+  match_rationale:
+  - '✓ client-relations: Vendedor — Royal Prestige'
+  - '✓ data-science: Fintech y Data Science, Ing. Citizen Data Scientist, technical'
+  - '✓ investment: AutoInvest Pro, Figura 3 (Bursatrón)'
+  - '✓ markets: Asistente Administrativo — CAVII, AutoInvest Pro, Figura 3 (Bursatrón), Fintech y Data
+    Science, Ing. Citizen Data Scientist, financial'
+  - '✓ quant: AutoInvest Pro, Figura 3 (Bursatrón), Fintech y Data Science, Ing. Citizen Data Scientist,
+    technical'
+  cv_version_id: 869b53b0_cv_9941df
+  cover_letter_version_id: 869b53b0_cover_f29977
+  status: draft
+  notes: ''
+  email_draft_id: null
+  interview_prep_path: null

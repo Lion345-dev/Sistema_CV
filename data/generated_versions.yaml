@@ -7,3 +7,23 @@
     section_order_index: 2
     interests_label_index: 1
   timestamp: '2026-08-03T13:50:33.187185'
+- id: 869b53b0_cv_9941df
+  posting_id: 869b53b0
+  doc_type: cv
+  language: en
+  template_choices:
+    summary_variant_id: summary_markets_en_v2
+    section_order_index: 0
+    interests_label_index: 1
+  timestamp: '2026-08-17T19:09:05.432934'
+- id: 869b53b0_cover_f29977
+  posting_id: 869b53b0
+  doc_type: cover_letter
+  language: en
+  template_choices:
+    opening_index: 0
+    closing_index: 2
+    salutation_index: 2
+    signoff_index: 2
+    three_paragraphs: false
+  timestamp: '2026-08-17T19:09:05.432934'
