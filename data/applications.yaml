@@ -134,7 +134,7 @@
     Seniority level: Not applicable (entry-friendly).'
   language: en
   date_created: '2026-08-17'
-  date_applied: null
+  date_applied: '2026-08-17'
   match_score: 78
   match_rationale:
   - '✓ process-improvement: Asistente Administrativo — CAVII'
@@ -143,11 +143,10 @@
   - '✓ sales: Vendedor — Royal Prestige'
   cv_version_id: 1f2f235a_cv_9343f8
   cover_letter_version_id: 1f2f235a_cover_a01aa3
-  status: draft
-  notes: Requiere crear cuenta de candidato en el portal de JPMC (Oracle Cloud) antes de poder enviar
-    - pendiente de que Luis cree la cuenta.
+  status: applied
+  notes: Enviada por Luis vía el portal de JPMC (Oracle Cloud) tras crear su cuenta de candidato.
   email_draft_id: null
-  interview_prep_path: null
+  interview_prep_path: interview_prep/JPMorganChase_Pricing_Revenue_Management___Associate_1f2f235a/prep.md
 - id: 3bc92e09
   company: S&P Global (S&P Dow Jones Indices)
   role_title: Associate Data Product Owner
