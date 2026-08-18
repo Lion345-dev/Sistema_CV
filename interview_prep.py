@@ -16,7 +16,7 @@ import os
 
 from models import MasterCV, Application
 
-MODEL_NAME = "gemini-2.0-flash"
+MODEL_NAME = "gemini-3.6-flash"
 
 
 def _get_api_key() -> str | None:
