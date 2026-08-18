@@ -202,3 +202,80 @@
     Job ID 330713). Estatus en el portal: In Review.'
   email_draft_id: null
   interview_prep_path: null
+- id: cf8c937f
+  company: Santander Corporate & Investment Banking (Risk)
+  role_title: Analista de Crédito Intermediarios Financieros y Soberanos
+  posting_text: 'Analista de Crédito Intermediarios Financieros y Soberanos – Santander Corporate & Investment
+    Banking Risk
+
+
+    Funciones:
+
+    La posición vacante pertenece al equipo de Admisión de Crédito para Instituciones Financieras y Soberanos,
+    que atiende al segmento de Corporate & Investment Banking y comprende a los intermediarios financieros
+    más importantes del sistema financiero así como el riesgo soberano.
+
+    Las responsabilidades asociadas a esta posición incluyen participar en:
+
+    i) El análisis económico-financiero de los clientes, orientado a la situación financiera del intermediario
+    (morosidad, liquidez, capitalización)
+
+    ii) El análisis de planes de negocio
+
+    iii) El análisis de los diferentes sectores (bancos, casas de bolsa, afores, fondos, aseguradoras
+    y soberano)
+
+    iv) El análisis de solicitudes de financiación/líneas de contraparte y definición del apetito de crédito
+
+    v) La exposición en los comités de crédito y otros foros; tanto locales como globales
+
+    vi) La elaboración de informes de calificación crediticia
+
+
+    Requisitos:
+
+    Recién egresados o con experiencia profesional previa (Máx 3 años)
+
+    Licenciatura en Actuaria, Economía, Administración, Finanzas, Negocios y/o afines.
+
+    Promedio de licenciatura > 8.0.
+
+    Inglés avanzado.
+
+    Dominio avanzado de Excel y PPT y herramientas de Inteligencia Artificial.
+
+    Se privilegia candidatos con (i) conocimiento previo en análisis de instituciones financieras (bancos,
+    casas de bolsa, Afores, Aseguradoras); (ii) experiencia profesional a lo largo de la vida académica;
+    (iii) intercambio internacional.
+
+    Actitud proactiva y capacidad para trabajar en equipo y bajo presión. Habilidades desarrolladas de
+    comunicación verbal y escrita.
+
+
+    Qué ofrecemos:
+
+    Desarrollo de capacidades analíticas, habilidades de comunicación escrita y verbal
+
+    Integración en un equipo con proyección internacional y con constantes relaciones interdepartamentales
+    y clientes
+
+    Salario competitivo'
+  language: es
+  date_created: '2026-08-18'
+  date_applied: null
+  match_score: 90
+  match_rationale:
+  - '✓ client-relations: Vendedor — Royal Prestige'
+  - '✓ english: English Testing and Assessment Workshop (35 hrs)'
+  - '✓ investment: AutoInvest Pro, Figura 3 (Bursatrón)'
+  - '✓ leadership: Coordinador de Eventos — COPARMEX'
+  - '✓ markets: Asistente Administrativo — CAVII, AutoInvest Pro, Figura 3 (Bursatrón), Fintech y Data
+    Science, Ing. Citizen Data Scientist, financial'
+  - '✓ policy: English Testing and Assessment Workshop (35 hrs), communication'
+  - '✓ writing: English Testing and Assessment Workshop (35 hrs), communication'
+  cv_version_id: cf8c937f_cv_462b3b
+  cover_letter_version_id: cf8c937f_cover_10b123
+  status: draft
+  notes: 'Vacante compartida en el grupo de WhatsApp Stocks/ETFs/Commodities Serie-D (contacto: monofrietti@santander.com.mx).'
+  email_draft_id: null
+  interview_prep_path: null

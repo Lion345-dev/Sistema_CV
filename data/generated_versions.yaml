@@ -67,3 +67,23 @@
     signoff_index: 2
     three_paragraphs: true
   timestamp: '2026-08-17T20:36:53.194037'
+- id: cf8c937f_cv_462b3b
+  posting_id: cf8c937f
+  doc_type: cv
+  language: es
+  template_choices:
+    summary_variant_id: summary_regulatory_es
+    section_order_index: 1
+    interests_label_index: 1
+  timestamp: '2026-08-18T11:33:33.995730'
+- id: cf8c937f_cover_10b123
+  posting_id: cf8c937f
+  doc_type: cover_letter
+  language: es
+  template_choices:
+    opening_index: 2
+    closing_index: 2
+    salutation_index: 2
+    signoff_index: 1
+    three_paragraphs: true
+  timestamp: '2026-08-18T11:33:33.995730'
