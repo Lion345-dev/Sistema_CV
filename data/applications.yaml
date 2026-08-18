@@ -279,3 +279,38 @@
   notes: 'Vacante compartida en el grupo de WhatsApp Stocks/ETFs/Commodities Serie-D (contacto: monofrietti@santander.com.mx).'
   email_draft_id: null
   interview_prep_path: null
+- id: 42a29af7
+  company: ACON Investments
+  role_title: Associate, Investment Professional (U.S. Investment Team)
+  posting_text: 'ACON is looking to hire an Associate-level investment professional for its U.S. investment
+    team.
+
+
+    As part of a broader team, the investment professional will be involved in all aspects of the investment
+    process from sourcing opportunities to playing an active role in the diligence process, and uniquely,
+    will have the opportunity to work directly with our portfolio companies to create value and growth
+    for the firm and its stakeholders. We pride ourselves on our strong culture of mentorship and believe
+    this role offers meaningful exposure, responsibility, and opportunities for growth. We seek motivated
+    individuals with relevant investment banking experience with a keen eye for detail and a desire to
+    thrive in a fast-paced environment.
+
+
+    If you or anyone in your network would be a great fit for this opportunity, please send a resume to
+    mmyers@aconinvestments.com.'
+  language: en
+  date_created: '2026-08-18'
+  date_applied: null
+  match_score: 100
+  match_rationale:
+  - '✓ investment: AutoInvest Pro, Figura 3 (Bursatrón)'
+  - '✓ markets: Asistente Administrativo — CAVII, AutoInvest Pro, Figura 3 (Bursatrón), Fintech y Data
+    Science, Ing. Citizen Data Scientist, financial'
+  cv_version_id: 42a29af7_cv_b58006
+  cover_letter_version_id: 42a29af7_cover_3cc9f5
+  status: draft
+  notes: 'Compartida en el grupo de WhatsApp Stocks/ETFs/Commodities Serie-D. Requiere experiencia previa
+    en investment banking, que Luis no tiene directamente (su experiencia es CAVII + AutoInvest Pro +
+    Figura 3); score alto del matcher por texto corto de la vacante, verificar fit real antes de asumir
+    alta probabilidad de respuesta. Contacto: mmyers@aconinvestments.com.'
+  email_draft_id: null
+  interview_prep_path: null
