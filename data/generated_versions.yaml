@@ -47,3 +47,23 @@
     signoff_index: 1
     three_paragraphs: false
   timestamp: '2026-08-17T19:24:28.930415'
+- id: 3bc92e09_cv_3edcc0
+  posting_id: 3bc92e09
+  doc_type: cv
+  language: en
+  template_choices:
+    summary_variant_id: summary_markets_en_v2
+    section_order_index: 0
+    interests_label_index: 0
+  timestamp: '2026-08-17T20:36:53.194037'
+- id: 3bc92e09_cover_1f68b5
+  posting_id: 3bc92e09
+  doc_type: cover_letter
+  language: en
+  template_choices:
+    opening_index: 0
+    closing_index: 0
+    salutation_index: 1
+    signoff_index: 2
+    three_paragraphs: true
+  timestamp: '2026-08-17T20:36:53.194037'

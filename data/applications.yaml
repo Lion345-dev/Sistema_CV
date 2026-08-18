@@ -148,3 +148,57 @@
     - pendiente de que Luis cree la cuenta.
   email_draft_id: null
   interview_prep_path: null
+- id: 3bc92e09
+  company: S&P Global (S&P Dow Jones Indices)
+  role_title: Associate Data Product Owner
+  posting_text: 'Associate Data Product Owner, Equity Data, S&P Dow Jones Indices, Mexico City, Mexico.
+    Job ID: 330713.
+
+
+    The Equity Data value stream manages all data related to securities and corporate actions, ensuring
+    accuracy and reliability for indices and analytics. The Data Product Owner (Associate) is accountable
+    for the data supporting the maintenance and calculation of S&P Dow Jones Indices.
+
+
+    Responsibilities: Research and verify corporate actions (rights offerings, splits, dividends), accurately
+    inputting them into proprietary databases. Proactively monitor multiple news sources for new corporate
+    action announcements, ensuring data quality and adherence to strict deadlines. Ensure all entries
+    are meticulously verified and supporting evidence is stored. Implement robust data governance practices,
+    including validation and auditing. Develop deep domain expertise in securities and corporate actions,
+    gaining exposure to industry standards (ISIN, CUSIP, Share Type), workflow automation, and data management
+    tools. Proactively communicate major issues, answer client queries on corporate actions, coordinate
+    with global teams. Work with Product Leads, Index Design, Commercial teams, Technology and Production
+    teams. Manage multiple projects and deadlines: requirements gathering, analytical thinking, compilation
+    of data, documentation.
+
+
+    Basic Qualifications: Bachelor''s Degree in math, finance, business, or relevant field preferred.
+    Fluency in English required. Excellent understanding of financial markets. Strong attention to detail
+    and self-motivated. Excellent analytical and quantitative capabilities. Strong SQL skills with experience
+    in relational databases.
+
+
+    Preferred Qualifications: Experience with Databricks, Python programming, or ETL processes like Power
+    Automate. CFA or advanced degree in business, math, economics, or finance. Direct experience at an
+    index provider and/or financial institution focused on index tracking/replication or portfolio management.
+    Experience with corporate action research. Understanding of how indices are used and the impact of
+    corporate events and rebalance changes on indices and financial portfolios. Knowledge of vendor terminals
+    and vendor data analytical platforms.'
+  language: en
+  date_created: '2026-08-17'
+  date_applied: null
+  match_score: 100
+  match_rationale:
+  - '✓ investment: AutoInvest Pro, Figura 3 (Bursatrón)'
+  - '✓ markets: Asistente Administrativo — CAVII, AutoInvest Pro, Figura 3 (Bursatrón), Fintech y Data
+    Science, Ing. Citizen Data Scientist, financial'
+  - '✓ quant: AutoInvest Pro, Figura 3 (Bursatrón), Fintech y Data Science, Ing. Citizen Data Scientist,
+    technical'
+  - '✓ writing: English Testing and Assessment Workshop (35 hrs), communication'
+  cv_version_id: 3bc92e09_cv_3edcc0
+  cover_letter_version_id: 3bc92e09_cover_1f68b5
+  status: draft
+  notes: Job ID 330713. Sugerida por Diego Rueda como mejor fit tras la postulación a Senior Associate,
+    Index Management.
+  email_draft_id: null
+  interview_prep_path: null
