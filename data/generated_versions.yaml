@@ -27,3 +27,23 @@
     signoff_index: 2
     three_paragraphs: false
   timestamp: '2026-08-17T19:09:05.432934'
+- id: 1f2f235a_cv_9343f8
+  posting_id: 1f2f235a
+  doc_type: cv
+  language: en
+  template_choices:
+    summary_variant_id: summary_markets_en
+    section_order_index: 3
+    interests_label_index: 1
+  timestamp: '2026-08-17T19:24:28.930415'
+- id: 1f2f235a_cover_a01aa3
+  posting_id: 1f2f235a
+  doc_type: cover_letter
+  language: en
+  template_choices:
+    opening_index: 1
+    closing_index: 1
+    salutation_index: 1
+    signoff_index: 1
+    three_paragraphs: false
+  timestamp: '2026-08-17T19:24:28.930415'
