@@ -362,7 +362,7 @@
     Disponibilidad para cambio de residencia: NO'
   language: es
   date_created: '2026-08-19'
-  date_applied: null
+  date_applied: '2026-08-19'
   match_score: 87
   match_rationale:
   - '✓ client-relations: Vendedor — Royal Prestige'
@@ -374,9 +374,10 @@
     Figura 3 (Bursatrón), communication, financial'
   cv_version_id: 4aecd323_cv_d207e6
   cover_letter_version_id: 4aecd323_cover_9a62bb
-  status: draft
+  status: applied
   notes: Vacante encontrada en LinkedIn (Guadalajara). Pide 3+ años de experiencia en Casa de Bolsa/Banco
     que Luis no tiene directamente — score alto por vocabulario, fit real cuestionable por ese filtro
-    de experiencia.
+    de experiencia. Solicitud enviada por Claude vía LinkedIn (Solicitud con LinkedIn / Easy Apply), autorizado
+    por Luis, con CV.docx tailored adjunto.
   email_draft_id: null
   interview_prep_path: null
