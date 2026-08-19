@@ -107,3 +107,23 @@
     signoff_index: 1
     three_paragraphs: false
   timestamp: '2026-08-18T12:11:40.864851'
+- id: 4aecd323_cv_d207e6
+  posting_id: 4aecd323
+  doc_type: cv
+  language: es
+  template_choices:
+    summary_variant_id: summary_markets_es_v2
+    section_order_index: 0
+    interests_label_index: 1
+  timestamp: '2026-08-19T11:15:36.445275'
+- id: 4aecd323_cover_9a62bb
+  posting_id: 4aecd323
+  doc_type: cover_letter
+  language: es
+  template_choices:
+    opening_index: 2
+    closing_index: 2
+    salutation_index: 1
+    signoff_index: 1
+    three_paragraphs: true
+  timestamp: '2026-08-19T11:15:36.445275'
