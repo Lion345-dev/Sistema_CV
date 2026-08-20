@@ -395,16 +395,17 @@
     With the possibility of being hired by the client.'
   language: en
   date_created: '2026-08-19'
-  date_applied: null
+  date_applied: '2026-08-19'
   match_score: 100
   match_rationale:
   - '✓ english: English Testing and Assessment Workshop (35 hrs)'
   cv_version_id: 5957a8f9_cv_b10e37
   cover_letter_version_id: 5957a8f9_cover_35c6cc
-  status: draft
+  status: applied
   notes: 'Contacto directo de la reclutadora Adriana Juárez (LinkedIn) vía mensaje en grupo de WhatsApp,
     no posting formal — texto muy breve, score alto poco informativo por falta de detalle. Trainee 0-2
     años, buen fit real por nivel de experiencia. Posibilidad de ser contratado por el cliente final (staffing).
-    Contacto: adriana.juarez@pyramidci.com.'
+    Contacto: adriana.juarez@pyramidci.com. Correo enviado por Claude (autorizado por Luis) a adriana.juarez@pyramidci.com
+    con CV y carta adjuntos.'
   email_draft_id: null
   interview_prep_path: null
